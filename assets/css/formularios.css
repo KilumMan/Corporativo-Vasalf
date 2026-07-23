@@ -1,0 +1,193 @@
+/* Estilos generales */
+:root {
+  --color-primary: #054157;
+  --color-accent: #6366f1; /* Color secundario para botones y focus */
+  --color-text-light: #f1f5f9;
+  --color-text-dark: #334155;
+  --color-bg-light: #f8fafc;
+  --color-bg-white: #fff;
+  --color-border: #e2e8f0;
+  --color-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  background-color: var(--color-bg-light);
+  color: var(--color-text-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Contenedores principales */
+main {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.5rem;
+}
+
+/* Encabezado */
+header {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+header h1 {
+  font-size: 1.875rem; /* 2xl */
+  font-weight: 700; /* bold */
+  color: var(--color-primary);
+}
+header p {
+  font-size: 0.875rem; /* sm */
+  color: var(--color-text-dark);
+}
+.header-logo {
+  /* Espacio para el logo, puedes ajustar el tamaño aquí */
+  width: 100px;
+  height: 50px;
+  background-color: transparent;
+}
+
+/* Botones y controles */
+.btn-primary, .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  box-shadow: var(--color-shadow);
+  transition-property: background-color, border-color, color, box-shadow;
+  transition-duration: 0.15s;
+}
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+}
+.btn-primary:hover {
+  background-color: #032a39; /* Un tono más oscuro del primario */
+}
+.btn-secondary {
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-white);
+  color: var(--color-text-dark);
+}
+.btn-secondary:hover {
+  background-color: var(--color-bg-light);
+}
+
+/* Controles de formulario (input, select) */
+input, select, textarea {
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid var(--color-border);
+  padding: 0.5rem;
+  background-color: var(--color-bg-white);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+input:focus-visible, select:focus-visible, textarea:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Tabla de datos */
+.table-container {
+  background-color: var(--color-bg-white);
+  border-radius: 1rem;
+  box-shadow: var(--color-shadow);
+  overflow: hidden;
+}
+table {
+  width: 100%;
+  font-size: 0.875rem;
+}
+thead {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  text-align: left;
+}
+th {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+th:hover {
+  background-color: #032a39;
+}
+tbody tr:nth-child(even) {
+  background-color: var(--color-bg-light);
+}
+tbody tr:hover {
+  background-color: #f1f5f9;
+}
+td {
+  padding: 0.5rem 1rem;
+  border-top: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+/* Paginación */
+.pagination {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.pagination-controls button {
+  padding: 0.5rem 0.75rem;
+  border-radius: 1rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-white);
+  color: var(--color-text-dark);
+  transition: background-color 0.15s ease-in-out;
+}
+.pagination-controls button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Mensajes de estado (esqueleto, vacío, error) */
+#skeleton {
+  padding: 1.5rem;
+}
+#skeleton .h-4 {
+  background-color: var(--color-border);
+}
+#empty, #error, #alert {
+  padding: 1rem;
+  text-align: center;
+  border-radius: 0.75rem;
+}
+#empty {
+  color: #64748b;
+  background-color: var(--color-bg-white);
+}
+#error, #alert {
+  border: 1px solid;
+}
+#error {
+  color: #b91c1c;
+  background-color: #fef2f2;
+  border-color: #fecaca;
+}
+#alert.ok {
+  color: #047857;
+  background-color: #f0fdf4;
+  border-color: #d1fae5;
+}
+#alert.error {
+  color: #b91c1c;
+  background-color: #fef2f2;
+  border-color: #fecaca;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .md\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+}
