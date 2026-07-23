@@ -1,0 +1,9 @@
+# Archivos basura del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Configuración local de editor
+.vscode/
+
+# Archivo de configuración privada (si contiene credenciales)
+.private/
